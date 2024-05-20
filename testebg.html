@@ -1,0 +1,22 @@
+<script>
+const images = [
+  'imagem1.jpg',
+  'imagem2.jpg',
+  'imagem3.jpg',
+  // Adicione mais imagens aqui se necessário
+];
+
+let currentIndex = 0;
+
+// Função para alterar o background-image
+function changeBackground() {
+  // Incrementa o índice da imagem atual
+  currentIndex = (currentIndex + 1) % images.length;
+
+  // Define a nova imagem de fundo
+  document.body.style.backgroundImage = `url(${images[currentIndex]})`;
+}
+
+// Chama a função de alteração de plano de fundo a cada 5 segundos
+setInterval(changeBackground, 5000);
+<script>
