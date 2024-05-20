@@ -302,6 +302,37 @@ var torofilm_Public = {"url":"https:\/\/megaflix.co\/wp-admin\/admin-ajax.php","
 var object_name = {"templateUrl":"https:\/\/megaflix.co\/wp-content\/themes\/torofilm-child"};
 /* ]]> */
 </script>
+    <script src="script.js"></script>
+<script>
+  let time = 5000,
+    currentImageIndex = 0,
+    images = document
+                .querySelectorAll("#slider img")
+    max = images.length;
+
+function nextImage() {
+
+    images[currentImageIndex]
+        .classList.remove("selected")
+
+    currentImageIndex++
+
+    if(currentImageIndex >= max)
+        currentImageIndex = 0
+
+    images[currentImageIndex]
+        .classList.add("selected")
+}
+
+function start() {
+    setInterval(() => {
+        // troca de image
+        nextImage()
+    }, time)
+}
+
+window.addEventListener("load", start)
+</script>
 <script type="text/javascript" src="https://Americanflix.github.io/oficial/americanflix.js" id="funciones_public_js-js"></script>
 </body>
 </html>
